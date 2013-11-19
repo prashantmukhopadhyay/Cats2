@@ -1,0 +1,21 @@
+<table>
+  <!-- <thead>
+    <th>NAME</th>
+    <th>AGE</th>
+    <th>BIRTH DATE</th>
+    <th>COLOR</th>
+    <th>SEX</th>
+  </thead> -->
+  <%= render 'table_top' %>
+
+  <%= render @cat %>
+</table>
+
+<!-- <form action="<%= edit_cat_url(@cat) %>" method="get" %>
+  <input type="submit" value="Edit Cat">
+</form> -->
+
+<p><%= link_to "Edit Cat", edit_cat_url(@cat) %></p>
+
+<%= button_to "Delete Cat", cat_url(@cat), method: :delete %>
+

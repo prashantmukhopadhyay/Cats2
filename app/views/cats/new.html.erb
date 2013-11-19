@@ -1,0 +1,33 @@
+<h1>New Cat form</h1>
+
+<form action="<%= cats_url %>" method="post">
+  <p><label>Cat's Name:
+    <input name="cat[name]" placeholder="Enter Name">
+  </label></p>
+
+  <p><label>Cat's Birth Date:
+    <input type="date" name="cat[birth_date]" placeholder="Enter Date">
+  </label></p>
+
+  <p><label>Cat's Age:
+    <input name="cat[age]" placeholder="Enter Age">
+  </label></p>
+
+  <p><label>Cat's Sex:<br>
+    <input type="radio" name="cat[sex]" value="" checked>Please choose<br>
+    <% Cat::SEX.each do |sex| %>
+      <input type="radio" name="cat[sex]" value="<%= sex %>" <%= "checked" if sex == @cat.sex %>>Male<br>
+    <% end  %>
+  </label></p>
+
+  <p><label>Cat's Color:<br>
+    <select name="cat[color]">
+      <option value="" selected>Please choose</option>
+      <% Cat::COLORS.each do |color| %>
+        <option value="<%= color %>"><%= color %></option>
+      <% end %>
+    </select>
+  </label></p>
+
+  <input type="submit" value="Create this cat">
+</form>
